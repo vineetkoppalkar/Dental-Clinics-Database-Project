@@ -1,3 +1,3 @@
 <footer class="footer">
-  <p>&copy; Company 2017</p>
+  <p>&copy; DENTisTO inc. 2020</p>
 </footer>
