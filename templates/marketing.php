@@ -1,5 +1,3 @@
-<?php include 'db_connection.php'; ?>
-
 <div class="row marketing">
   <div class="col-lg-6">
     <?php
@@ -14,7 +12,7 @@
     if ($result->num_rows > 0) {
       // output data of each row
       while ($row = $result->fetch_assoc()) {
-        echo $row["id"] . " " . $row["name"] . " " . $row["address"] . " " . $row["phoneNumber"] . "<br />";
+        echo $row["patientId"] . " " . $row["name"] . " " . $row["address"] . " " . $row["phoneNumber"] . "<br />";
       }
     } else {
       echo "0 results";

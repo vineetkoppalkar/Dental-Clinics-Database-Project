@@ -1,4 +1,3 @@
-<?php include 'db_connection.php'; ?>
 <div class="container ">
   <div class="row justify-content-center row-cols-2">
     <a href="/templates/clinics/clinics.php" class="col text-center">
