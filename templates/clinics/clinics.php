@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include '../../db_connection.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -17,8 +19,9 @@
 <body class="clinic">
 	<div class="container">
 		<?php include '../header.php'; ?>
+		<?php include '../../database/clinics/getClinics.php'; ?>
 
-		<p>c. Get details of all appointments at a given clinic on a specific date.</p>
+		<!-- <p>c. Get details of all appointments at a given clinic on a specific date.</p> -->
 
 
 		<?php include '../footer.php'; ?>

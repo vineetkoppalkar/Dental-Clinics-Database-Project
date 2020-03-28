@@ -22,6 +22,7 @@
 		<?php include 'templates/header.php'; ?>
 		<?php include 'templates/jumbotron.php'; ?>
 		<?php include 'templates/menuOptions.php'; ?>
+		<?php include 'templates/marketing.php'; ?>
 		<?php include 'templates/footer.php'; ?>
 	</div>
 
