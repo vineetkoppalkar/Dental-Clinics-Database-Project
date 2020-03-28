@@ -18,6 +18,9 @@
 	<div class="container">
 		<?php include '../header.php'; ?>
 
+		<p>c. Get details of all appointments at a given clinic on a specific date.</p>
+
+
 		<?php include '../footer.php'; ?>
 	</div>
 

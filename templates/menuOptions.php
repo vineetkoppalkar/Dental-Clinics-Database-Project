@@ -10,6 +10,11 @@
         DENTISTS
       </div>
     </a>
+    <a href="/templates/patients/patients.php" class="col text-center">
+      <div class="mainMenuItems">
+        PATIENTS
+      </div>
+    </a>
     <a href="/templates/appointments/appointments.php" class="col text-center">
       <div class="mainMenuItems">
         APPOINTMENTS
@@ -18,6 +23,11 @@
     <a href="/templates/bills/bills.php" class="col text-center">
       <div class="mainMenuItems">
         BILLS
+      </div>
+    </a>
+    <a href="/templates/treatments/treatments.php" class="col text-center">
+      <div class="mainMenuItems">
+        TREATMENTS
       </div>
     </a>
   </div>
