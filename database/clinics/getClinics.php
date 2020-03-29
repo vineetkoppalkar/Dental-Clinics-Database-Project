@@ -15,7 +15,7 @@
         '<h5 class="card-title">' . $clinic['name'] . '</h5>' .
         '<p class="card-text">' . $clinic['address'] . '<br />' . $clinic['phoneNumber']  . '</p>' .
         '<a href="/templates/clinics/clinic.php?clinicId=' . $clinic['clinicId'] . '&date=' . $todayDate .
-        '" class="btn btn-primary">Details</a>' .
+        '" class="btn btn-outline-primary">Details</a>' .
         '</div>' .
         '</div>' .
         '</div>';

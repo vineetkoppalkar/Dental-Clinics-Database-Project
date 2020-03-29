@@ -2,7 +2,7 @@
   <div class="col-lg-6">
     <?php
     $conn = OpenCon();
-    echo "<h4>All Appointments for a Single Clinic</h4>";
+    echo "<h4>All Appointments for a Clinic</h4>";
 
     $clinicId = $_GET['clinicId'];
     $date = $_GET['date'];
