@@ -54,7 +54,13 @@
                   $appointment['time'] .
                 '</div>' .
                 '<div class="col-sm text-center">' .
-                  '<a class="btn btn-outline-primary btn-sm" href="#" role="button">Details</a>' .
+                  '<a 
+                    class="btn btn-outline-primary btn-sm"
+                    href="/templates/appointments/appointment.php?appointmentId=' . $appointment['appointmentId'] . '"' .
+                    'role="button"
+                  >
+                    Details
+                  </a>' .
                 '</div>' .
               '</div>' .
             '</li>';

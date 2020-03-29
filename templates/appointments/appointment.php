@@ -13,23 +13,19 @@
 
 <!-- Custom CSS -->
 
-<title>clinics</title>
+<title>Appointment</title>
 </head>
 
-<body class="clinic">
+<body>
   <div class="container">
     <?php include '../header.php'; ?>
-    <h1>Clinic</h1>
-
-    <form method="get" class="form-inline" action="<?php echo '/templates/clinics/clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
-      <label for="date">Date:</label>
-      <input type="text" id="date" name="date" value="<?php echo date('Y-m-d'); ?>">
-      <input type="submit" value="Submit">
-    </form>
-
-    <?php include '../../database/clinics/getSingleClinic.php'; ?>
+    <div class="row">
+      <?php include '../../database/appointments/getAppointmentClinicInfo.php'; ?>
+      <?php include '../../database/appointments/getAppointmentPatientInfo.php'; ?>
+      <?php include '../../database/appointments/getAppointmentProfessionalInfo.php'; ?>
+    </div>
+    <?php include '../../database/appointments/getTreatmentsPerformed.php'; ?>
     <?php include '../footer.php' ?>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </div>
 </body>
