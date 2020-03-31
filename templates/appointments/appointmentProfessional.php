@@ -13,28 +13,14 @@
 
 <!-- Custom CSS -->
 
-<title>Appointments</title>
+<title>Appointment Professional</title>
 </head>
 
 <body>
   <div class="container">
     <?php include '../header.php'; ?>
-    <div class="row w-75 mx-auto mb-3">
-      <h3 class="mr-2">All appointments</h3>
-      <div class="col-sm-8">
-        <a
-          href="./newAppointment.php"
-          class="btn btn-outline-success btn-sm"
-          role="button"
-          aria-pressed="true"
-        >
-          New appointment
-        </a>
-      </div>
-    </div>
-    <?php include '../../database/appointments/getAppointments.php'; ?>
+    <?php include '../../database/appointments/getProfessionalsAndTreatments.php'; ?>
     <?php include '../footer.php' ?>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </div>
 </body>
