@@ -47,24 +47,33 @@
     foreach ($appointments as $appointment) {
       echo '<li class="w-100 list-group-item container">' .
               '<div class="row">' .
-                '<div class="col-sm text-right font-weight-bold">' .
+                '<div class="col-sm text-center font-weight-bold">' .
                   $appointment['date'] .
                 '</div>' .
-                '<div class="col-sm text-right">' .
+                '<div class="col-sm text-center">' .
                   $appointment['time'] .
                 '</div>' .
-                '<div class="col-sm text-right">' .
+                '<div class="col-sm text-center">' .
                   '<a 
-                    class="btn btn-outline-primary btn-sm"
+                    class="btn btn-outline-primary btn-sm mx-2"
                     href="/templates/appointments/appointment.php?appointmentId=' . $appointment['appointmentId'] . '"' .
                     'role="button"
                   >
                     Details
                   </a>' .
-                '</div>' .
-                '<div class="col-sm text-left">' .
+                  '<a 
+                    class="btn btn-outline-warning btn-sm mx-2"
+                    href="/templates/appointments/updateAppointment.php?' .
+                                                  'appointmentId=' . $appointment['appointmentId'] . '&' .
+                                                  'date=' . $appointment['date'] . '&' .
+                                                  'time=' . $appointment['time'] . '&' .
+                                                  'clinicId=' . $clinicId . '"' .
+                    'role="button"
+                  >
+                    Update
+                  </a>' .
                   '<button 
-                    class="btn btn-outline-danger btn-sm"
+                    class="btn btn-outline-danger btn-sm mx-2"
                     onclick="handleOnDelete(' . $appointment['appointmentId'] . ')"
                   >
                     Delete
