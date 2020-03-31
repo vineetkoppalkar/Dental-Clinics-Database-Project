@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
     echo '<div class="col-sm-4 mb-5">' .
             '<div class="card  h-100">' .
               '<div class="card-body">' .
-                '<h5 class="card-title">Patient Detials</h5>' .
+                '<h5 class="card-title">Patient Details</h5>' .
                 '<p class="card-text ml-4">' . 
                   $patientDetails['name'] . 
                   '<br />' . 
