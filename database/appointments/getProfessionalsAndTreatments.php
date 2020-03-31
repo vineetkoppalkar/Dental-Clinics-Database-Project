@@ -97,7 +97,6 @@
   
   <script>
     const insertNewAppointment = (patientId, clinicId, date, time, professionalId, treatmentIds) => {
-      console.log(patientId, clinicId, date, time, professionalId, treatmentIds);
 
       const formData = new FormData();
       formData.append("patientId", patientId);
@@ -111,9 +110,7 @@
         method: 'POST',
         body: formData
       }).then(response => {
-        console.log("Fetch success")
-        console.log(response.text())
-        // window.location.href = "/templates/appointments/appointments.php"; 
+        window.location.href = "/templates/appointments/appointments.php"; 
       }).catch(error => {
         console.log("Fetch error while inserting new appointment");
         console.log(error);
