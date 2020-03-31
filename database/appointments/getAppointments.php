@@ -47,13 +47,13 @@
     foreach ($appointments as $appointment) {
       echo '<li class="w-100 list-group-item container">' .
               '<div class="row">' .
-                '<div class="col-sm text-center font-weight-bold">' .
+                '<div class="col-sm text-right font-weight-bold">' .
                   $appointment['date'] .
                 '</div>' .
-                '<div class="col-sm text-center">' .
+                '<div class="col-sm text-right">' .
                   $appointment['time'] .
                 '</div>' .
-                '<div class="col-sm text-center">' .
+                '<div class="col-sm text-right">' .
                   '<a 
                     class="btn btn-outline-primary btn-sm"
                     href="/templates/appointments/appointment.php?appointmentId=' . $appointment['appointmentId'] . '"' .
@@ -61,6 +61,14 @@
                   >
                     Details
                   </a>' .
+                '</div>' .
+                '<div class="col-sm text-left">' .
+                  '<button 
+                    class="btn btn-outline-danger btn-sm"
+                    onclick="handleOnDelete(' . $appointment['appointmentId'] . ')"
+                  >
+                    Delete
+                  </button>' .
                 '</div>' .
               '</div>' .
             '</li>';
@@ -70,5 +78,22 @@
 
   CloseCon($conn);
   ?>
+
+  <script>
+    function handleOnDelete(appointmentId) {
+      const formData = new FormData();
+      formData.append("appointmentId", appointmentId);
+
+      fetch('../../database/appointments/deleteAppointment.php', {
+        method: 'POST',
+        body: formData
+      }).then(response => {
+        window.location.href = "/templates/appointments/appointments.php"; 
+      }).catch(error => {
+        console.log("Fetch error while deleting appointment");
+        console.log(error);
+      });
+    }
+  </script>
 
 </div>
