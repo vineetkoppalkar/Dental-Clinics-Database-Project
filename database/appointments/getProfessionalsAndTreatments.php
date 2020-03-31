@@ -71,8 +71,7 @@
           <div class="form-group row">
             <label for="treatment" class="col-sm-3 col-form-label">Treatment(s)</label>
             <div class="col-sm-9">
-              <select class="custom-select my-1 mr-sm-2 pb-5" name="treatment" multiple data-live-search="true">
-                <option selected>Select a treatment(s) ...</option>';
+              <select class="custom-select my-1 mr-sm-2 pb-5" name="treatment" multiple data-live-search="true">';
 
                 foreach ($treatmentNameMap as $treatmentId => $treatmentName) {
                   echo '<option value="' . $treatmentId . '">' . $treatmentName . '</option>';
@@ -125,7 +124,7 @@
       const treatmentDropdownOptions = event.target[1];
       const nbOfTreatments = event.target[1].length;
 
-      for (let i = 1; i < nbOfTreatments; i++) {
+      for (let i = 0; i < nbOfTreatments; i++) {
         const { selected, value } = treatmentDropdownOptions[i];
         if (selected) {
           selectedTreatmentIds.push(value);
