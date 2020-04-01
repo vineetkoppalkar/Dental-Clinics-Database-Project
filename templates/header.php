@@ -11,7 +11,7 @@
         <a class="nav-link" href="#">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Advanced Search</a>
+        <a class="nav-link" href="/templates/advancedSearch/advancedSearch.php">Advanced Search</a>
       </li>
     </ul>
   </nav>
