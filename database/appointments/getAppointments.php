@@ -55,12 +55,29 @@
                 '</div>' .
                 '<div class="col-sm text-center">' .
                   '<a 
-                    class="btn btn-outline-primary btn-sm"
+                    class="btn btn-outline-primary btn-sm mx-2"
                     href="/templates/appointments/appointment.php?appointmentId=' . $appointment['appointmentId'] . '"' .
                     'role="button"
                   >
                     Details
                   </a>' .
+                  '<a 
+                    class="btn btn-outline-warning btn-sm mx-2"
+                    href="/templates/appointments/updateAppointment.php?' .
+                                                  'appointmentId=' . $appointment['appointmentId'] . '&' .
+                                                  'date=' . $appointment['date'] . '&' .
+                                                  'time=' . $appointment['time'] . '&' .
+                                                  'clinicId=' . $clinicId . '"' .
+                    'role="button"
+                  >
+                    Update
+                  </a>' .
+                  '<button 
+                    class="btn btn-outline-danger btn-sm mx-2"
+                    onclick="handleOnDelete(' . $appointment['appointmentId'] . ')"
+                  >
+                    Delete
+                  </button>' .
                 '</div>' .
               '</div>' .
             '</li>';
@@ -70,5 +87,22 @@
 
   CloseCon($conn);
   ?>
+
+  <script>
+    function handleOnDelete(appointmentId) {
+      const formData = new FormData();
+      formData.append("appointmentId", appointmentId);
+
+      fetch('../../database/appointments/deleteAppointment.php', {
+        method: 'POST',
+        body: formData
+      }).then(response => {
+        window.location.href = "/templates/appointments/appointments.php"; 
+      }).catch(error => {
+        console.log("Fetch error while deleting appointment");
+        console.log(error);
+      });
+    }
+  </script>
 
 </div>

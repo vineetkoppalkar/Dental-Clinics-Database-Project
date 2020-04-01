@@ -13,13 +13,21 @@
 
 <!-- Custom CSS -->
 
-<title>Treatments</title>
+<title>dentists</title>
 </head>
 
-<body>
+<body class="dentist">
     <div class="container">
         <?php include '../header.php'; ?>
-        <?php include '../../database/treatments/getTreatments.php'; ?>
+        <h1>Dentist</h1>
+
+        <form method="get" class="form-inline" action="<?php echo '/templates/dentists/dentist.php?professionalId=' . htmlspecialchars($_GET['professionalId']); ?>">
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date" value="<?php echo date('Y-m-d'); ?>">
+            <input type="submit" value="Submit">
+        </form>
+
+        <?php include '../../database/dentists/getSingleDentist.php'; ?>
         <?php include '../footer.php' ?>
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
