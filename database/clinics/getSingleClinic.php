@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-lg-6">
-    <?php $date = ""; ?>
     <?php $clinicId = $_GET['clinicId']; ?>
 
     <h3>Search by date</h3>
     <form method="get" action="<?php echo '/templates/clinics/clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
       <input style="background-color: gray; display: none;" type="text" name="clinicId" value="<?php echo htmlspecialchars($_GET['clinicId']); ?>">
-      <textarea class="form-control" name="date" rows="2" cols="120"><?php echo $date; ?></textarea>
+      <input type="text" id="date" name="date">
+      <br />
       <br />
       <button type="submit" class="btn btn-outline-info w-25">
         Submit
