@@ -20,13 +20,6 @@
     <div class="container">
         <?php include '../header.php'; ?>
         <h1>Dentist</h1>
-
-        <form method="get" class="form-inline" action="<?php echo '/templates/dentists/dentist.php?professionalId=' . htmlspecialchars($_GET['professionalId']); ?>">
-            <label for="date">Date:</label>
-            <input type="text" id="date" name="date" value="<?php echo date('Y-m-d'); ?>">
-            <input type="submit" value="Submit">
-        </form>
-
         <?php include '../../database/dentists/getSingleDentist.php'; ?>
         <?php include '../footer.php' ?>
 

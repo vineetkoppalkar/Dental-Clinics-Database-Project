@@ -20,13 +20,6 @@
   <div class="container">
     <?php include '../header.php'; ?>
     <h1>Clinic</h1>
-
-    <form method="get" class="form-inline" action="<?php echo '/templates/clinics/clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
-      <label for="date">Date:</label>
-      <input type="text" id="date" name="date" value="<?php echo date('Y-m-d'); ?>">
-      <input type="submit" value="Submit">
-    </form>
-
     <?php include '../../database/clinics/getSingleClinic.php'; ?>
     <?php include '../footer.php' ?>
 
