@@ -5,9 +5,7 @@
 
     <h3>Search by date</h3>
     <form method="get" action="<?php echo '/templates/clinics/clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
-      Clinic ID: <input style="background-color: gray;" type="text" name="clinicId" value="<?php echo htmlspecialchars($_GET['clinicId']); ?>">
-      <br />
-      <br />
+      <input style="background-color: gray; display: none;" type="text" name="clinicId" value="<?php echo htmlspecialchars($_GET['clinicId']); ?>">
       <textarea class="form-control" name="date" rows="2" cols="120"><?php echo $date; ?></textarea>
       <br />
       <button type="submit" class="btn btn-outline-info w-25">

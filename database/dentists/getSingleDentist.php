@@ -3,18 +3,15 @@
         <?php $date = ""; ?>
         <?php $professionalId = $_GET['professionalId']; ?>
 
-        <h3>Search by date</h3>
+        <h3>Search by week</h3>
         <form method="get" action="<?php echo '/templates/dentists/dentist.php?professionalId=' . htmlspecialchars($_GET['professionalId']); ?>">
-            Dentist ID: <input style="background-color: gray;" type="text" name="professionalId" value="<?php echo htmlspecialchars($_GET['professionalId']); ?>">
-            <br />
-            <br />
-            <textarea class="form-control" name="date" rows="2" cols="120">"<?php echo $date; ?>"</textarea>
+            <input style="background-color: gray; display: none;" type="text" name="professionalId" value="<?php echo htmlspecialchars($_GET['professionalId']); ?>">
+            <textarea class="form-control" name="date" rows="2" cols="120"><?php echo $date; ?></textarea>
             <br />
             <button type="submit" class="btn btn-outline-info w-25">
                 Submit
             </button>
         </form>
-
 
         <?php
         $conn = OpenCon();
@@ -41,7 +38,7 @@
                         TreatmentPerformed.treatmentId = Treatments.treatmentId AND
                         Appointments.appointmentId = ReceivedBy.appointmentId AND
                         ReceivedBy.patientId = Patients.patientId AND
-                        WEEK(date) = WEEK($date);";
+                        WEEK(date) = WEEK(\"$date\");";
 
 
         $result = $conn->query($sql);
