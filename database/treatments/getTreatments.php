@@ -10,6 +10,7 @@
     if ($result->num_rows > 0) {
         echo '<h3>' . 'Treatments' . '</h3>';
         echo '<div class="col-sm-11 my-5">';
+        echo '<ul class="w-75 mx-auto mb-5 list-group">';
         while ($appointments = $result->fetch_assoc()) {
 
             echo '<li class="w-100 list-group-item container">' .
@@ -24,6 +25,7 @@
         }
         echo
             '</li>';
+        echo '</ul>';
     } else {
         echo "0 clinics found";
     }
