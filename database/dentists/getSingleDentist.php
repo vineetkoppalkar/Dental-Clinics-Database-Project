@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-lg-6">
-        <?php $date = ""; ?>
         <?php $professionalId = $_GET['professionalId']; ?>
 
         <h3>Search by week</h3>
         <form method="get" action="<?php echo '/templates/dentists/dentist.php?professionalId=' . htmlspecialchars($_GET['professionalId']); ?>">
             <input style="background-color: gray; display: none;" type="text" name="professionalId" value="<?php echo htmlspecialchars($_GET['professionalId']); ?>">
-            <textarea class="form-control" name="date" rows="2" cols="120"><?php echo $date; ?></textarea>
+            <input type="text" id="date" name="date">
+            <br />
             <br />
             <button type="submit" class="btn btn-outline-info w-25">
                 Submit
