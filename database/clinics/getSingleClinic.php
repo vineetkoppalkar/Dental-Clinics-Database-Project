@@ -1,8 +1,23 @@
 <div class="row">
   <div class="col-lg-6">
+    <?php $date = ""; ?>
+    <?php $clinicId = $_GET['clinicId']; ?>
+
+    <h3>Search by date</h3>
+    <form method="get" action="<?php echo '/templates/clinics/clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
+      Clinic ID: <input style="background-color: gray;" type="text" name="clinicId" value="<?php echo htmlspecialchars($_GET['clinicId']); ?>">
+      <br />
+      <br />
+      <textarea class="form-control" name="date" rows="2" cols="120"><?php echo $date; ?></textarea>
+      <br />
+      <button type="submit" class="btn btn-outline-info w-25">
+        Submit
+      </button>
+    </form>
+
     <?php
     $conn = OpenCon();
-    echo "<h4>All Appointments for a Clinic</h4>";
+    echo "<h4>All Appointments for the Clinic</h4>";
 
     $clinicId = $_GET['clinicId'];
     $date = $_GET['date'];
@@ -39,8 +54,50 @@
 
     if ($result->num_rows > 0) {
       // output data of each row
+      echo '<div style="width:1000px;">';
+      echo '<li class="w-100 list-group-item container">' .
+        '<div class="row">' .
+        '<div class="col-sm text-center font-weight-bold">' .
+        'Professional Name' .
+        '</div>' .
+        '<div class="col-sm text-center font-weight-bold">' .
+        'Patient Name' .
+        '</div>' .
+        '<div class="col-sm text-center font-weight-bold">' .
+        'Date' .
+        '</div>' .
+        '<div class="col-sm text-center font-weight-bold">' .
+        'Time' .
+        '</div>' .
+        '<div class="col-sm text-center font-weight-bold">' .
+        'Treatment Name' .
+        '</div>' .
+        '<div class="col-sm text-center font-weight-bold">' .
+        'Missed' .
+        '</div>' .
+        '</div>';
       while ($row = $result->fetch_assoc()) {
-        echo $row["professionalName"] . " " . $row["patientName"] . " " . $row["date"] . " " . $row["time"] . " " . $row["treatmentName"] . " " . $row["isMissed"] . "<br />";
+        echo '<li class="w-100 list-group-item container">' .
+          '<div class="row">' .
+          '<div class="col-sm text-center">' .
+          $row['professionalName'] .
+          '</div>' .
+          '<div class="col-sm text-center">' .
+          $row['patientName'] .
+          '</div>' .
+          '<div class="col-sm text-center">' .
+          $row['date'] . ' $' .
+          '</div>' .
+          '<div class="col-sm text-center">' .
+          $row['time'] .
+          '</div>' .
+          '<div class="col-sm text-center">' .
+          $row['treatmentName'] .
+          '</div>' .
+          '<div class="col-sm text-center">' .
+          $row['isMissed'] .
+          '</div>' .
+          '</div>';
       }
     } else {
       echo "0 appointments";
