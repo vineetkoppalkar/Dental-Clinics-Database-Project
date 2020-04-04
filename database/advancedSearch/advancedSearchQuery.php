@@ -12,7 +12,8 @@
     <textarea class="form-control" name="sqlQuery" rows="5" cols="120"><?php echo $sqlQuery;?></textarea>
   </div>
   </br>
-  <input type="submit" name="submit" value="Submit">  
+  <button class="btn btn-primary" type="submit" name="submit">Submit</button> 
+  </br></br>
 </form>
 
 <?php
@@ -32,11 +33,30 @@
       echo "<h4>Query Result: </h4>";
      
       if(strpos(strtolower($sqlQuery), "select") !== false){
-       
-        //Add check to see if the table selected is valid
+         //Add check to see if the table selected is valid
         $validTables = array("Appointments", "Bills", "DentalClinics", "Patients", "PerformedAt", "PerformedBy", "PreparedBy", "ProfessionalAt", "Professionals", "ReceivedBy", "ReceptionistAt", "Receptionists", "TreatmentPerformed", "Treatments");
-
-        if($result->num_rows > 0) {
+        $validTableName = false;
+        
+        foreach($validTables as $tableName){
+          if(strpos($sqlQuery, $tableName) !== false){
+            $validTableName = true;
+            break;
+          }
+        }
+        
+        if($validTableName == false){
+          echo 'The entered table name does not exist. </br></br>' .
+            '<div class="card">
+              <div class="card-header">
+                Tables
+              </div>
+              <div class="card-body">
+              <p class="card-text">Appointments, Bills, DentalClinics, Patients, PerformedAt, PerformedBy, PreparedBy, ProfessionalAt, Professionals, ReceivedBy, ReceptionistAt, Receptionists, TreatmentPerformed, Treatments</p>
+              </div
+            </div>';
+        // }else if(!is_object($result){
+        //   echo 'error';
+        }else if($result->num_rows > 0) {
           $firstRow = $result->fetch_assoc();
           echo '<li class="w-100 list-group-item container">' .
           '<div class="row">';
@@ -69,9 +89,9 @@
         }
       }else{
         if(!$result){
-          echo 'Error while running this query. </br>';
+          echo 'Error while running this query. </br></br>';
         } else if($result == 1){
-          echo 'The query has executed successfully! </br>';
+          echo 'The query has executed successfully! </br></br>';
         } 
       }
 
