@@ -1,3 +1,4 @@
+<?php header("Location: /templates/patients/patients.php"); ?>
 <?php include '../../db_connection.php'; ?>
 
 <?php
@@ -13,4 +14,6 @@
     $result = $conn->query($sql);
 
     CloseCon($conn);
+
+    
 ?>

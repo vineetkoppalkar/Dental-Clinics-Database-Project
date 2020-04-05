@@ -12,7 +12,6 @@
           class="w-50 mb-5 mx-auto"
           method="Post"
           action="/database/patients/postUpdatePatient.php"
-          onsubmit="document.location.href = \'/templates/patients/patients.php\'; return false;"
         >
           <input type="hidden" name="patientId" id="patientId" value="' . $patientId . '">
           <h3 class="mb-4 mx-auto">Update Appointment Details</h3>
