@@ -14,7 +14,7 @@
           action="/database/patients/postUpdatePatient.php"
         >
           <input type="hidden" name="patientId" id="patientId" value="' . $patientId . '">
-          <h3 class="mb-4 mx-auto">Update Appointment Details</h3>
+          <h3 class="mb-4 mx-auto">Update Patient Details</h3>
           <div class="form-group row">
             <label for="patient" class="col-sm-2 col-form-label">Patient</label>
             <div class=" col-sm-10">
