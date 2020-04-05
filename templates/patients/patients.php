@@ -20,7 +20,6 @@
 	<div class="container">
 		<?php include '../header.php'; ?>
 		<?php include '../../database/patients/getPatients.php'; ?>
-
 		<?php include '../footer.php'; ?>
 	</div>
 
