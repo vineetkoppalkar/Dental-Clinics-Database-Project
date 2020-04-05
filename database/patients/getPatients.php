@@ -1,5 +1,10 @@
-<div class="row">
 
+<div class="row">
+    <h3 class="col-sm-10">Patients</h3>
+    <a class="btn btn-primary col-sm-2" href="/templates/patients/createPatient.php">New Patient</a>
+</div>
+<div class="row">
+  
   <?php
   $conn = OpenCon();
 
@@ -27,7 +32,5 @@
 
   CloseCon($conn);
   ?>
-  <div class="col-sm-4 my-3">
-    <a class="btn btn-primary" href="/templates/patients/createPatient.php">New Patient</a>
-  </div>
+  
 </div>
