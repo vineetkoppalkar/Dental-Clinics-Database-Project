@@ -81,17 +81,16 @@
           echo '</div>';
         }
         echo '</div>';
+      }else if(is_object($result) && $result->num_rows == 0){
+        echo '0 results found</br></br>';
+      }else if($result == 1){
+        echo 'The query has executed successfully! </br></br>';
       }else if(!$result){
         echo 'Error while running this query. </br></br>';
-      } else if($result == 1){
-        echo 'The query has executed successfully! </br></br>';
-      } else if($result == 0){
-        echo '0 results found. </br></br>';
       }
 
       CloseCon($conn);
     }
   }
 ?>
-
-</div>
+</br></br>
