@@ -1,108 +1,101 @@
-<div class="row w-100">
+<div class="">
   <?php
 
-  function getClinicNames() {
+  function getMissedStatus($appointmentId) {
     $conn = OpenCon();
 
-    $clinicNameMap = array();
-    $sql = "SELECT clinicId, name FROM DentalClinics";
+    $sql = "SELECT  ReceivedBy.isMissed
+            FROM    ReceivedBy
+            WHERE   ReceivedBy.appointmentId = $appointmentId";
     $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-      while ($clinic = $result->fetch_assoc()) {
-        $clinicId = $clinic['clinicId'];
-        $clinicName = $clinic['name'];
-        $clinicNameMap[$clinicId] = $clinicName;
-      }
-    } else {
-      echo "0 clinics found";
-      return;
-    }
+    $isMissed = $result->fetch_assoc()['isMissed'];
 
     CloseCon($conn);
-    return $clinicNameMap;
+    return $isMissed;
   }
 
-  function getPatientNames() {
+  function getPaidStatus($appointmentId) {
     $conn = OpenCon();
 
-    $patientNameMap = array();
-    $sql = "SELECT * FROM Patients";
+    $sql = "SELECT  billId
+            FROM    TreatmentPerformed
+            WHERE   appointmentId = $appointmentId
+            GROUP BY appointmentId;";
     $result = $conn->query($sql);
+    $billId = intval($result->fetch_assoc()['billId']);
 
-    if ($result->num_rows > 0) {
-      while ($patient = $result->fetch_assoc()) {
-        $patientId = $patient['patientId'];
-        $patientName = $patient['name'];
-        $patientNameMap[$patientId] = $patientName;
-      }
-    } else {
-      echo "0 patients found";
-      return;
-    }
+    $sql = "SELECT  Bills.isPaid
+            FROM    Bills
+            WHERE   Bills.billId = $billId";
+    $result = $conn->query($sql);
+    $isPaid = $result->fetch_assoc()['isPaid'];
 
     CloseCon($conn);
-    return $patientNameMap;
+    return $isPaid;
   }
 
-  $clinicNameMap = getClinicNames();
-  $patientNameMap = getPatientNames();
+  $appointmentId = $_GET['appointmentId'];
+  $isMissed = getMissedStatus($appointmentId);
+  $isPaid = getPaidStatus($appointmentId);
 
-  echo '<form
-          class="w-50 mb-5 mx-auto"
-          method="GET"
-          action="/templates/appointments/appointmentProfessional.php"
-        >
-          <h3 class="mb-4 mx-auto">New Appointment Details</h3>
-          <div class="form-group row">
-            <label for="patientId" class="col-sm-2 col-form-label">Patient</label>
-            <div class="col-sm-10">
-              <select class="custom-select my-1 mr-sm-2" name="patientId">
-                <option selected>Select a patient ...</option>';
+  echo '<form class="m-5">
+          <div class="form-check my-2">';
 
-                foreach ($patientNameMap as $patientId => $patientName) {
-                  echo '<option value="' . $patientId . '">' . $patientName . '</option>';
-                }
+          if ($isMissed) {
+            echo '<input name="missed" type="checkbox" value="missed-true" class="form-check-input" checked>';
+          } else {
+            echo '<input name="missed" type="checkbox" value="missed-true" class="form-check-input">';
+          }
 
-  echo       '</select>
-            </div>
+  echo      '<label class="form-check-label" for="missed">Missed</label>
           </div>
-          <div class="form-group row">
-            <label for="clinicId" class="col-sm-2 col-form-label">Clinic</label>
-            <div class="col-sm-10">
-              <select class="custom-select my-1 mr-sm-2" name="clinicId">
-                <option selected>Select a clinic ...</option>';
+          <div class="form-check my-2">';
 
-                foreach ($clinicNameMap as $clinicId => $clinicName) {
-                  echo '<option value="' . $clinicId . '">' . $clinicName . '</option>';
-                }
+          if ($isPaid) {
+            echo '<input name="paid" type="checkbox" value="paid-true" class="form-check-input" checked>';
+          } else {
+            echo '<input name="paid" type="checkbox" value="paid-true" class="form-check-input">';
+          }
 
-  echo        '</select>
-            </div>
+  echo      '<label class="form-check-label" for="paid">Paid</label>
           </div>
-          <div class="form-group row">
-            <label for="date" class="col-sm-2 col-form-label">Date</label>
-            <div class=" col-sm-10">
-              <input name="date" type="text" class="form-control w-50" placeholder="2020-01-01">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="time" class="col-sm-2 col-form-label">Time</label>
-            <div class=" col-sm-10">
-              <input name="time" type="text" class="form-control w-50" placeholder="00:00:00">
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-8">
-              <button
-                type="submit"
-                class="btn btn-outline-info w-25"
-              >
-                Next
-              </button>
-            </div>
-          </div>
+          <button type="submit" class="btn btn-outline-info">Save</button>
         </form>';
+
   ?>
+
+<script>
+    const updateMissedPaid = (isMissed, isPaid, appointmentId) => {
+      const formData = new FormData();
+      formData.append("isMissed", isMissed);
+      formData.append("isPaid", isPaid);
+      formData.append("appointmentId", appointmentId);
+
+      fetch('../../database/appointments/updateMissedPaid.php', {
+        method: 'POST',
+        body: formData
+      }).then(response => {
+       window.location.href = `appointment.php?appointmentId=${appointmentId}`;
+      }).catch(error => {
+        console.log("Fetch error while updating missed and paid appointment status");
+        console.log(error);
+      });
+    };
+
+    const handleOnSubmit = (event) => {
+      event.preventDefault();
+
+      const isMissed = event.target[0].checked;
+      const isPaid = event.target[1].checked;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const appointmentId = urlParams.get('appointmentId');
+      
+      updateMissedPaid(isMissed, isPaid, appointmentId);
+    };
+
+    const form = document.getElementsByTagName('form')[0];
+    form.addEventListener('submit', handleOnSubmit);
+  </script>
 
 </div>
