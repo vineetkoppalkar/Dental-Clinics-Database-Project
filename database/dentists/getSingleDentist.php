@@ -73,7 +73,7 @@
                     $row['patientName'] .
                     '</div>' .
                     '<div class="col-sm text-center">' .
-                    $row['date'] . ' $' .
+                    $row['date'] .
                     '</div>' .
                     '<div class="col-sm text-center">' .
                     $row['time'] .
@@ -81,14 +81,18 @@
                     '<div class="col-sm text-center">' .
                     $row['treatmentName'] .
                     '</div>' .
-                    '<div class="col-sm text-center">' .
-                    $row['isMissed'] .
+                    '<div class="col-sm text-center">';
+                echo ($row['isMissed'] == 1) ? "Yes" : "No";
+                echo '</div>' .
                     '</div>' .
-                    '</div>';
+                    '</li>';
             }
         } else {
             echo "0 appointments";
         }
+        echo '<footer class="footer">' .
+            ' <p>&copy; DENTisTO inc. 2020</p>' .
+            '</footer>';
         CloseCon($conn);
         ?>
     </div>
