@@ -63,6 +63,7 @@
           '</div>'; 
         }
         echo '</div>' .
+        '<li class="w-100 list-group-item container">' .
         '<div class="row">';
         foreach($firstRow as $column=>$value){
           echo '<div class="col-sm text-center">' .
