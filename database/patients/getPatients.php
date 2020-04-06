@@ -15,13 +15,13 @@
     while ($patient = $result->fetch_assoc()) {
       echo
         '<div class="col-sm-4 my-3">' .
-          '<div class="card">' .
+          '<div class="card h-100">' .
             '<div class="card-body">' .
               '<a href="/templates/patients/updatePatient.php?patientId='.$patient['patientId'] .'&patientName='. $patient['name'] .'&address='. $patient['address'] .'&phoneNumber='.$patient['phoneNumber'].'" class="col-sm-40 float-right btn btn-outline-warning">Update</a>' .
               '<h5 class="card-title">' . $patient['name'] . '</h5>' .
               '<p class="card-text">' . $patient['address'] . '<br />' . $patient['phoneNumber']  . '</p>' .
               '<a href="/templates/patients/patient.php?patientId=' . $patient['patientId'] . '&patientName=' . $patient['name'] . '"'.
-              'class="btn btn-outline-primary">View Appointments</a>' .
+              'class="btn btn-outline-primary align-items-end">View Appointments</a>' .
             '</div>' .
           '</div>' .
         '</div>';

@@ -19,6 +19,7 @@
 <body class="clinic">
 	<div class="container">
 		<?php include '../header.php'; ?>
+		<h4>Clinics</h4>
 		<?php include '../../database/clinics/getClinics.php'; ?>
 
 		<!-- <p>c. Get details of all appointments at a given clinic on a specific date.</p> -->
