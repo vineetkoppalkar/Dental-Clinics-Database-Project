@@ -19,7 +19,6 @@
 <body class="clinic">
   <div class="container">
     <?php include '../header.php'; ?>
-    <h3>Patient</h3>
 
     <?php include '../../database/patients/getPatientApptDetails.php'; ?>
     <?php include '../footer.php' ?>

@@ -9,7 +9,7 @@
 
   if ($result->num_rows > 0) {
     while ($clinic = $result->fetch_assoc()) {
-      echo '<div class="col-sm-4 my-3">' .
+      echo '<div class="col-sm-4 my-3 h-100">' .
         '<div class="card">' .
         '<div class="card-body">' .
         '<h5 class="card-title">' . $clinic['name'] . '</h5>' .
