@@ -19,6 +19,7 @@
 <body>
   <div class="container">
     <?php include '../header.php'; ?>
+    <h4>Appointment</h4>
     <div class="row">
       <?php include '../../database/appointments/getAppointmentClinicInfo.php'; ?>
       <?php include '../../database/appointments/getAppointmentPatientInfo.php'; ?>
