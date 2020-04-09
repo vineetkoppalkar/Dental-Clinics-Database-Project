@@ -2,7 +2,7 @@
 
 function OpenCon()
 {
-	$dbhost = "127.0.0.1";
+	$dbhost = "fvc353.encs.concordia.ca";
 	$dbuser = "fvc353_4";
 	$dbpass = "r0cmu51c";
 	$db = "fvc353_4";
