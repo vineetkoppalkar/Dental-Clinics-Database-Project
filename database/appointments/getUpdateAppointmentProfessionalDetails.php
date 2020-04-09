@@ -105,7 +105,7 @@
     echo '<form
           class="w-50 mb-5 mx-auto"
           method="GET"
-          action="/templates/appointments/updateAppointmentProfessional.php&appointmentId=' . $_GET['appointmentId'] . '"
+          action="updateAppointmentProfessional.php&appointmentId=' . $_GET['appointmentId'] . '"
         >
           <h3 class="mb-4 mx-auto">Update Appointment Professional & Treatments</h3>
           <div class="form-group row">
@@ -169,7 +169,7 @@
         method: 'POST',
         body: formData
       }).then(response => {
-        window.location.href = "/templates/appointments/appointments.php"; 
+        window.location.href = "appointments.php"; 
       }).catch(error => {
         console.log("Fetch error while updating an appointment");
         console.log(error);

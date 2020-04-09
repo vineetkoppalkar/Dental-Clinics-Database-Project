@@ -109,7 +109,7 @@
         method: 'POST',
         body: formData
       }).then(response => {
-        window.location.href = "/templates/appointments/appointments.php"; 
+        window.location.href = "appointments.php"; 
       }).catch(error => {
         console.log("Fetch error while inserting new appointment");
         console.log(error);

@@ -11,7 +11,7 @@
     echo '<form
           class="w-50 mb-5 mx-auto"
           method="Post"
-          action="/database/patients/postUpdatePatient.php"
+          action="database/patients/postUpdatePatient.php"
         >
           <input type="hidden" name="patientId" id="patientId" value="' . $patientId . '">
           <h3 class="mb-4 mx-auto">Update Patient Details</h3>

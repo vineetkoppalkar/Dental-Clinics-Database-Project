@@ -3,7 +3,7 @@
         <?php $professionalId = $_GET['professionalId']; ?>
 
         <h3>Search by week</h3>
-        <form method="get" action="<?php echo '/templates/dentists/dentist.php?professionalId=' . htmlspecialchars($_GET['professionalId']); ?>">
+        <form method="get" action="<?php echo 'dentist.php?professionalId=' . htmlspecialchars($_GET['professionalId']); ?>">
             <input style="background-color: gray; display: none;" type="text" name="professionalId" value="<?php echo htmlspecialchars($_GET['professionalId']); ?>">
             <input type="text" id="date" name="date">
             <br />

@@ -51,7 +51,7 @@
   echo '<form
           class="w-50 mb-5 mx-auto"
           method="GET"
-          action="/templates/appointments/appointmentProfessional.php"
+          action="appointmentProfessional.php"
         >
           <h3 class="mb-4 mx-auto">New Appointment Details</h3>
           <div class="form-group row">

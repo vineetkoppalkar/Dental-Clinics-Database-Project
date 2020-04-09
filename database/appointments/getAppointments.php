@@ -56,14 +56,14 @@
                 '<div class="col-sm text-center">' .
                   '<a 
                     class="btn btn-outline-primary btn-sm mx-2"
-                    href="/templates/appointments/appointment.php?appointmentId=' . $appointment['appointmentId'] . '"' .
+                    href="appointment.php?appointmentId=' . $appointment['appointmentId'] . '"' .
                     'role="button"
                   >
                     Details
                   </a>' .
                   '<a 
                     class="btn btn-outline-warning btn-sm mx-2"
-                    href="/templates/appointments/updateAppointment.php?' .
+                    href="updateAppointment.php?' .
                                                   'appointmentId=' . $appointment['appointmentId'] . '&' .
                                                   'date=' . $appointment['date'] . '&' .
                                                   'time=' . $appointment['time'] . '&' .
@@ -97,7 +97,7 @@
         method: 'POST',
         body: formData
       }).then(response => {
-        window.location.href = "/templates/appointments/appointments.php"; 
+        window.location.href = "appointments.php"; 
       }).catch(error => {
         console.log("Fetch error while deleting appointment");
         console.log(error);

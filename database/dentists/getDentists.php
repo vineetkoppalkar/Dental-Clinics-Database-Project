@@ -19,7 +19,7 @@
                 '<div class="card-body">' .
                 '<h5 class="card-title">' . $dentists['name'] . '</h5>' .
                 '<p class="card-text">' . $dentists['phoneNumber']  . '</p>' .
-                '<a href="/templates/dentists/dentist.php?professionalId=' . $dentists['professionalId'] . '&date=' . $todayDate .
+                '<a href="dentist.php?professionalId=' . $dentists['professionalId'] . '&date=' . $todayDate .
                 '" class="btn btn-outline-primary">Details</a>' .
                 '</div>' .
                 '</div>' .
