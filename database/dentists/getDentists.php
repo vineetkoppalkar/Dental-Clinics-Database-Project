@@ -2,7 +2,12 @@
     <?php
     $conn = OpenCon();
 
-    $sql = "SELECT * FROM Professionals WHERE isDentist = True";
+    $sql =  "SELECT Professionals.professionalId, Professionals.isDentist,  Professionals.name,  Professionals.phoneNumber
+            FROM Professionals, ProfessionalAt, DentalClinics 
+            WHERE isDentist = True AND
+            Professionals.professionalId = ProfessionalAt.dentistId AND
+            ProfessionalAt.clinicId = DentalClinics.clinicId";
+
     $result = $conn->query($sql);
 
     $todayDate = date("Y-m-d");

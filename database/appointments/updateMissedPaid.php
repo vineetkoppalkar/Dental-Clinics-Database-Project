@@ -3,6 +3,9 @@
 <?php
 
   $appointmentId = $_POST['appointmentId']; 
+  $isMissed = $_POST['isMissed']; 
+  $isPaid = $_POST['isPaid']; 
+
 
   $conn = OpenCon();
 
@@ -11,12 +14,12 @@
           WHERE   appointmentId = $appointmentId
           GROUP BY appointmentId;";
   $result = $conn->query($sql);
-  $appointmentBillId = intval($result->fetch_assoc()['billId']);
+  $billId = intval($result->fetch_assoc()['billId']);
 
-  $sql = "DELETE FROM Appointments WHERE appointmentId = $appointmentId;";
+  $sql = "UPDATE Bills set isPaid = $isPaid WHERE billId = $billId;";
   $result = $conn->query($sql);
 
-  $sql = "DELETE FROM Bills WHERE billId = $appointmentBillId;";
+  $sql = "UPDATE ReceivedBy set isMissed = $isMissed WHERE appointmentId = $appointmentId;";
   $result = $conn->query($sql);
 
   CloseCon($conn);

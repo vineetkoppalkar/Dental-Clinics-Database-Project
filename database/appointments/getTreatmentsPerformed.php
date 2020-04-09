@@ -10,9 +10,9 @@
 
   $result = $conn->query($sql);
 
-  echo '<h6 class="w-75 mx-auto">Treatments performed</h6>';
+  echo '<h6 class="w-100">Treatments performed</h6>';
   if ($result->num_rows > 0) {
-    echo '<ul class="w-75 mx-auto mb-5 list-group">';
+    echo '<ul class="w-100 mb-5 list-group">';
     while ($treatment = $result->fetch_assoc()) {
       echo '<li class="w-100 list-group-item container">' .
               '<div class="row">' .
