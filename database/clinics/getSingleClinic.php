@@ -3,7 +3,7 @@
     <?php $clinicId = $_GET['clinicId']; ?>
 
     <h3>Search by date</h3>
-    <form method="get" action="<?php echo '/templates/clinics/clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
+    <form method="get" action="<?php echo 'clinic.php?clinicId=' . htmlspecialchars($_GET['clinicId']); ?>">
       <input style="background-color: gray; display: none;" type="text" name="clinicId" value="<?php echo htmlspecialchars($_GET['clinicId']); ?>">
       <input type="text" id="date" name="date">
       <br />
