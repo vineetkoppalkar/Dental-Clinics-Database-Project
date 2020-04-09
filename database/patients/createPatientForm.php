@@ -5,7 +5,7 @@
     echo '<form
           class="w-50 mb-5 mx-auto"
           method="Post"
-          action="/database/patients/postCreatePatient.php"
+          action="../../database/patients/postCreatePatient.php"
         >
           <h3 class="mb-4 mx-auto">Create New Patient</h3>
           <div class="form-group row">

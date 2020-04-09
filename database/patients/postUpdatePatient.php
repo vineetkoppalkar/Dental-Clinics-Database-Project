@@ -1,4 +1,4 @@
-<?php header("Location: https://fvc353.encs.concordia.ca/COMP_353/templates/patients/patients.php"); ?>
+<?php header("Location: /templates/patients/patients.php"); ?>
 <?php include '../../db_connection.php'; ?>
 
 <?php
