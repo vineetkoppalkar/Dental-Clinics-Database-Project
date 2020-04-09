@@ -1,6 +1,6 @@
 <div class="container ">
   <div class="row justify-content-center row-cols-2">
-    <a href="clinics/clinics.php" class="col text-center">
+    <a href="templates/clinics/clinics.php" class="col text-center">
       <div class="mainMenuItems">
         CLINICS
       </div>
