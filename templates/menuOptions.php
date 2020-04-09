@@ -5,27 +5,27 @@
         CLINICS
       </div>
     </a>
-    <a href="./dentists/dentists.php" class="col text-center">
+    <a href="../templates/dentists/dentists.php" class="col text-center">
       <div class="mainMenuItems">
         DENTISTS
       </div>
     </a>
-    <a href="./patients/patients.php" class="col text-center">
+    <a href="../templates/patients/patients.php" class="col text-center">
       <div class="mainMenuItems">
         PATIENTS
       </div>
     </a>
-    <a href="./appointments/appointments.php" class="col text-center">
+    <a href="../templates/appointments/appointments.php" class="col text-center">
       <div class="mainMenuItems">
         APPOINTMENTS
       </div>
     </a>
-    <a href="./bills/bills.php" class="col text-center">
+    <a href="../templates/bills/bills.php" class="col text-center">
       <div class="mainMenuItems">
         BILLS
       </div>
     </a>
-    <a href="./treatments/treatments.php" class="col text-center">
+    <a href="../templates/treatments/treatments.php" class="col text-center">
       <div class="mainMenuItems">
         TREATMENTS
       </div>
