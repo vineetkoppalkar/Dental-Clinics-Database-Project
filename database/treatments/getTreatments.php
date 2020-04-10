@@ -8,8 +8,8 @@
     $todayDate = date("Y-m-d");
 
     if ($result->num_rows > 0) {
-        echo '<h3>' . 'Treatments' . '</h3>';
-        echo '<div class="col-sm-11 my-5">';
+        echo '<h3 class="w-75 mx-auto">Treatments</h3>';
+        echo '<div class="col-sm-11 my-3">';
         echo '<ul class="w-75 mx-auto mb-5 list-group">';
         while ($appointments = $result->fetch_assoc()) {
 
