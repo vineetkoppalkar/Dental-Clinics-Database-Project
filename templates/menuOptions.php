@@ -1,34 +1,34 @@
-<div class="container ">
-  <div class="row justify-content-center row-cols-2">
-    <a href="templates/clinics/clinics.php" class="col text-center">
-      <div class="mainMenuItems">
-        CLINICS
-      </div>
-    </a>
-    <a href="templates/staff/dentists.php" class="col text-center">
-      <div class="mainMenuItems">
-        STAFF
-      </div>
-    </a>
-    <a href="templates/patients/patients.php" class="col text-center">
-      <div class="mainMenuItems">
-        PATIENTS
-      </div>
-    </a>
-    <a href="templates/appointments/appointments.php" class="col text-center">
-      <div class="mainMenuItems">
-        APPOINTMENTS
-      </div>
-    </a>
-    <a href="templates/bills/bills.php" class="col text-center">
-      <div class="mainMenuItems">
-        BILLS
-      </div>
-    </a>
-    <a href="templates/treatments/treatments.php" class="col text-center">
-      <div class="mainMenuItems">
-        TREATMENTS
-      </div>
-    </a>
+<div class="container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <a href="templates/clinics/clinics.php" class="btn btn-outline-primary w-100 p-5 m-1" role="button">
+        <h4 class="m-0">CLINICS</h4>
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="templates/staff/dentists.php" class="btn btn-outline-primary w-100 p-5 m-1" role="button">
+        <h4 class="m-0">STAFF</h4>
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="templates/patients/patients.php" class="btn btn-outline-primary w-100 p-5 m-1" role="button">
+        <h4 class="m-0">PATIENTS</h4>
+      </a>
+    </div>
+        <div class="col-sm-6">  
+      <a href="templates/appointments/appointments.php" class="btn btn-outline-primary w-100 p-5 m-1" role="button">
+        <h4 class="m-0">APPOINTMENTS</h4>
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="templates/bills/bills.php" class="btn btn-outline-primary w-100 p-5 m-1" role="button">
+        <h4 class="m-0">BILLS</h4>
+      </a>
+    </div>
+    <div class="col-sm-6">
+      <a href="templates/treatments/treatments.php" class="btn btn-outline-primary w-100 p-5 m-1" role="button">
+        <h4 class="m-0">TREATMENTS</h4>
+      </a>
+    </div>
   </div>
 </div>
