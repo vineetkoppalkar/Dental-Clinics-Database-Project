@@ -5,9 +5,9 @@
         CLINICS
       </div>
     </a>
-    <a href="templates/dentists/dentists.php" class="col text-center">
+    <a href="templates/staff/dentists.php" class="col text-center">
       <div class="mainMenuItems">
-        DENTISTS
+        STAFF
       </div>
     </a>
     <a href="templates/patients/patients.php" class="col text-center">

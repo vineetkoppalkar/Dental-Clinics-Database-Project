@@ -19,11 +19,37 @@
 <body class="clinic">
     <div class="container">
         <?php include '../header.php'; ?>
-        <?php include '../../database/dentists/getDentists.php'; ?>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a
+                href="/templates/staff/dentists.php"
+                class="btn btn-success active"
+                tabindex="-1"
+                role="button"
+                aria-disabled="true"
+            >
+                Dentists
+            </a>
+            <a
+                href="/templates/staff/dentalAssistants.php"
+                class="btn btn-success"
+                tabindex="-1"
+                role="button"
+                aria-disabled="true"
+            >
+                Dental Assistants
+            </a>
+            <a
+                href="/templates/staff/receptionists.php"
+                class="btn btn-success"
+                tabindex="-1"
+                role="button"
+                aria-disabled="true"
+            >
+                Receptionists
+            </a>
+        </div>
 
-        <!-- <p>c. Get details of all appointments at a given clinic on a specific date.</p> -->
-
-
+        <?php include '../../database/staff/getDentists.php'; ?>
         <?php include '../footer.php'; ?>
     </div>
 
