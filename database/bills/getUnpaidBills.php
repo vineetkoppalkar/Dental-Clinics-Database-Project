@@ -11,8 +11,9 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo '<h3>' . 'Unpaid Bills' . '</h3>';
-        echo '<div class="col-sm-11 my-5">';
+        echo '<h3 class="w-75 mx-auto">Unpaid Bills</h3>';
+        echo '<div class="col-sm-11 my-3">';
+        echo '<ul class="w-75 mx-auto mb-5 list-group">';
         echo '<li class="w-100 list-group-item container">' .
                 '<div class="row">' .
                 '<div class="col-sm text-center font-weight-bold">' .
@@ -46,8 +47,9 @@
                 '</div>' .
                 '</div>';
         }
-        echo
-            '</li>';
+        echo '</li>';
+        echo '</ul>';
+
     } else {
         echo "0 unpaid bills found";
     }
