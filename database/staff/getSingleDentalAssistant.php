@@ -18,7 +18,7 @@
     $conn = OpenCon();
 
     echo "<div class='col-sm-12'>";
-    echo "<h4 class='ml-5 mb-3'>All Appointments for Dental Assistant</h4>";
+    echo "<h4 class='ml-5 mb-3'>Appointments for Dental Assistant</h4>";
 
     $professionalId = $_GET['professionalId'];
     $date = $_GET['date'];
