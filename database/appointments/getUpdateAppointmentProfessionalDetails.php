@@ -101,6 +101,8 @@
     $treatmentNameMap = getTreatmentNames();
     $prevProfessionalId = getAppointmentProfessionalId($_GET['appointmentId']);
     $prevTreatmentIds = getAppointmentTreatmentIds($_GET['appointmentId']);
+    $randomProfessionalId = array_rand($professionalNameMap);
+
 
     echo '<form
           class="w-50 mb-5 mx-auto"
@@ -112,7 +114,8 @@
             <label for="professionalId" class="col-sm-3 col-form-label">Dentist</label>
             <div class="col-sm-9">
               <select class="custom-select my-1 mr-sm-2" name="professionalId">
-                <option selected>Select a dentist ...</option>';
+                <option value="' . $randomProfessionalId . '" selected>Select a dentist ...</option>
+                <option value="' . $randomProfessionalId . '" selected>Random dentist</option>';
 
                 foreach ($professionalNameMap as $professionalId => $professionalName) {
                   if ($professionalId == $prevProfessionalId) {

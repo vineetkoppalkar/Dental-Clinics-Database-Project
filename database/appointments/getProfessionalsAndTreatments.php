@@ -52,6 +52,7 @@
 
   $professionalNameMap = getProfessionalNames();
   $treatmentNameMap = getTreatmentNames();
+  $randomProfessionalId = array_rand($professionalNameMap);
 
   echo '<form class="w-50 mb-5 mx-auto">
           <h3 class="mb-4 mx-auto">Professional and Treatment Details</h3>
@@ -59,7 +60,8 @@
             <label for="professionalId" class="col-sm-3 col-form-label">Dentist</label>
             <div class="col-sm-9">
               <select class="custom-select my-1 mr-sm-2" name="professionalId">
-                <option selected>Select a dentist ...</option>';
+                <option value="'. $randomProfessionalId  .'" selected>Select a dentist ...</option>
+                <option value="' . $randomProfessionalId .'">Random dentist</option>';
 
                 foreach ($professionalNameMap as $professionalId => $professionalName) {
                   echo '<option value="' . $professionalId . '">' . $professionalName . '</option>';
