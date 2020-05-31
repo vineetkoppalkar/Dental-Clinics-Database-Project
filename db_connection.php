@@ -2,6 +2,7 @@
 
 function OpenCon()
 {
+	// The following values are no longer valid
 	$dbhost = "fvc353.encs.concordia.ca";
 	$dbuser = "fvc353_4";
 	$dbpass = "r0cmu51c";
